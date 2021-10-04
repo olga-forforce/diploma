@@ -1,5 +1,7 @@
 import React from 'react';
-import { NameForm, AppHeader, Search } from './Header.module.scss';
+import { NameForm, AppHeader } from './Header.module.scss';
+import Search from "../Search/Search";
+
 
 function Header() {
 
@@ -9,8 +11,7 @@ function Header() {
         <p>
          To Do List
         </p>
-          <input
-              className={Search} id="name" type="text" placeholder="search" />
+          <Search />
       </header>
     </div>
   );

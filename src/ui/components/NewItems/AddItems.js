@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
-import { Items, ButtonAdd, NameItem } from './AddItems.module.scss';
+import { Items, NameItem } from './AddItems.module.scss';
+import Button from "../Forms/Button";
 
 function AddItems () {
     const [name, setName] = useState('');
@@ -15,7 +16,7 @@ function AddItems () {
                 value={name}
                 onChange={handleChange}
                 className={NameItem} id="name" type="text" placeholder="Name..." />
-            <input className={ButtonAdd} type="submit" value="Add Item" />
+            <Button name="Add Item"/>
         </div>
     );
 }
