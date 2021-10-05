@@ -4,10 +4,7 @@ import Button from "../Forms/Button";
 
 
 export default function Items (props) {
-
     const {elem} = props;
-    // const [elem, setElem] = useState([{ id: 1, text:'Do JavaScript Projects'},
-    //     {id: 2, text:'Learn NodeJS'}, {id: 3, text:'Learn ReactJS'}, {id: 4, text:'Learn GraphQL'}]);
 
     return (
         <>

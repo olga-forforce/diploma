@@ -4,7 +4,8 @@ import Button from "../Forms/Button";
 
 function AddItems (props) {
     const { setElem, elem } = props;
-    const onSubmit = () => {
+    const onSubmit = (event) => {
+        event.preventDefault();
         setElem([elem])
     }
 
@@ -15,7 +16,8 @@ function AddItems (props) {
         }
     }
     return (
-        <form className={Items} onSubmit={onSubmit}>
+        <form className={Items} onSubmit={() => setElem([...elem, { id: 5, text:'New'}])}>
+            {console.log(elem)}
             <input
                 value={name}
                 onChange={handleChange}
