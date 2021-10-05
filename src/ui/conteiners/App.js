@@ -9,7 +9,7 @@ function App() {
     return (
         <>
             <Header/>
-            <AddItems setElem={setElem} />
+            <AddItems setElem={setElem} elem={elem} />
             <Items elem={elem} />
         </>
     );
