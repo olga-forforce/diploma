@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Form } from './index.module.scss';
-import Header from './ui/components/Header/Header';
-import AddItems from './ui/components/NewItems/AddItems';
-import Items from "./ui/components/Items/Items";
+import App from "./ui/conteiners/App";
 
 
 ReactDOM.render(
   <React.StrictMode>
       <div className={Form}>
-    <Header />
-    <AddItems />
-    <Items />
+    <App />
 
       </div>
   </React.StrictMode>,

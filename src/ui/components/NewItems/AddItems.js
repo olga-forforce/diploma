@@ -2,7 +2,8 @@ import React, { useState} from 'react';
 import { Items, NameItem } from './AddItems.module.scss';
 import Button from "../Forms/Button";
 
-function AddItems () {
+function AddItems (props) {
+    const { setElem } = props;
     const [name, setName] = useState('');
 
     const handleChange = (event) => {
@@ -11,13 +12,13 @@ function AddItems () {
         }
     }
     return (
-        <div className={Items}>
+        <form className={Items} onSubmit={}>
             <input
                 value={name}
                 onChange={handleChange}
                 className={NameItem} id="name" type="text" placeholder="Name..." />
             <Button name="Add Item"/>
-        </div>
+        </form>
     );
 }
 
