@@ -1,23 +1,26 @@
 import React, { useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Items, NameItem } from './AddItems.module.scss';
 import Button from "../Forms/Button";
 
 function AddItems (props) {
     const { setElem, elem } = props;
+    const [name, setName] = useState('');
+
     const onSubmit = (event) => {
+        setElem([...elem, { id: uuidv4(), text:name}]);
+        setName('');
         event.preventDefault();
-        setElem([elem])
     }
 
-    const [name, setName] = useState('');
     const handleChange = (event) => {
         if (event.target.value.length !== 50) {
             setName(event.target.value)
         }
     }
+
     return (
-        <form className={Items} onSubmit={() => setElem([...elem, { id: 5, text:'New'}])}>
-            {console.log(elem)}
+        <form className={Items} onSubmit={onSubmit}>
             <input
                 value={name}
                 onChange={handleChange}
