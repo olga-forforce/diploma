@@ -8,15 +8,21 @@ function AddItems (props) {
     const [name, setName] = useState('');
 
     const onSubmit = (event) => {
-        setElem([...elem, { id: uuidv4(), text:name}]);
         setName('');
+        setElem([{ id: uuidv4(), text:name}, ...elem]);
         event.preventDefault();
+        // if (event.value !== ''){
+        //     setName(event.value);
+        // }
     }
 
     const handleChange = (event) => {
         if (event.target.value.length !== 50) {
             setName(event.target.value)
         }
+        // if(setName.value === '') {
+        //     return false;
+        // }
     }
 
     return (
